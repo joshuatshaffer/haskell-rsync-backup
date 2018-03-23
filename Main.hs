@@ -16,18 +16,10 @@ getExistingVersions dir = do
   dirs <- filterM (fmap isDirectory . getFileStatus . (dir </>)) files
   return $ map (fromInteger . read . takeFileName) dirs
 
-askUser :: [Action] -> IO ()
-askUser _ = return ()
-
-doActions :: [Action] -> IO ()
-doActions _ = return ()
-
 main :: IO ()
 main = do
   versions <- getExistingVersions "test"
   print versions
   time <- getPOSIXTime
-  let actions = pickActions time versions
-  print actions
-  askUser actions
-  doActions actions
+  let actions = statusOfVersions time versions
+  mapM_ print actions
