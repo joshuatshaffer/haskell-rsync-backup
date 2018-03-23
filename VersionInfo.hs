@@ -1,10 +1,11 @@
 
 module VersionInfo (VersionCatagory, VersionStatus, catagorizeVersions, statusOfVersions) where
 
-import Data.Time.Clock.POSIX
-import Data.Time.Clock
-import Data.Time.Calendar
+import Data.Time.Clock.POSIX (POSIXTime, posixSecondsToUTCTime)
+import Data.Time.Clock (utctDay)
+import Data.Time.Calendar (toGregorian)
 import Data.List (mapAccumL, sort)
+
 
 data VersionCatagory = VC_Latest
                      | VC_Year
