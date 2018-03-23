@@ -1,5 +1,5 @@
 
-module Decisions (VersionCatagory, VersionStatus, catagorizeVersions, statusOfVersions) where
+module VersionInfo (VersionCatagory, VersionStatus, catagorizeVersions, statusOfVersions) where
 
 import Data.Time.Clock.POSIX
 import Data.Time.Clock

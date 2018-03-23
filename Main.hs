@@ -7,7 +7,7 @@ import System.Directory
 import System.Posix.Files
 import System.FilePath.Posix
 
-import Decisions
+import VersionInfo
 
 
 getExistingVersions :: FilePath -> IO [POSIXTime]
